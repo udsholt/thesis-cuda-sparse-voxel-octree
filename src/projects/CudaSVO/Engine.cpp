@@ -1,8 +1,5 @@
 #include "Engine.h"
 
-// https://devtalk.nvidia.com/default/topic/468428/help-me-for-cudagraphicsglregisterimage/
-// http://rauwendaal.net/2011/02/10/how-to-use-cuda-3-0s-new-graphics-interoperability-api-with-opengl/
-
 #include <Mathlib/Vec2i.h>
 #include <Mathlib/Vec2f.h>
 #include <Mathlib/Mat4x4f.h>
