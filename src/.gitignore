@@ -1,0 +1,9 @@
+projects/build
+projects/ipch
+*.vcxproj.user
+*.vcxproj.filters
+*.opensdf
+*.sdf
+*.suo
+*.pdb
+*.nvuser

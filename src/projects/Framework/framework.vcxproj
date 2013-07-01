@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1138E18D-8D07-45E8-B9FA-4AECC006C6D1}</ProjectGuid>
+    <RootNamespace>Framework</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir);$(SolutionDir)..\3rdparty\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\3rdparty\lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\intermediate\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir);$(SolutionDir)..\3rdparty\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\3rdparty\lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\intermediate\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>GLFW.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>GLFW.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Console\ConsoleCommandManager.cpp" />
+    <ClCompile Include="Console\ConsoleCommand.cpp" />
+    <ClCompile Include="Console\ConsoleLog.cpp" />
+    <ClCompile Include="Camera\Camera.cpp" />
+    <ClCompile Include="Debug\DebugAxis.cpp" />
+    <ClCompile Include="Debug\DebugQuad.cpp" />
+    <ClCompile Include="Debug\DebugCube.cpp" />
+    <ClCompile Include="Engine\EngineBasic.cpp" />
+    <ClCompile Include="Camera\Frustum.cpp" />
+    <ClCompile Include="Overlay\Overlay.cpp" />
+    <ClCompile Include="Overlay\OverlayManager.cpp" />
+    <ClCompile Include="Overlay\ConsoleOverlay.cpp" />
+    <ClCompile Include="Console\ConsoleHistory.cpp" />
+    <ClCompile Include="Console\Console.cpp" />
+    <ClCompile Include="Core.cpp" />
+    <ClCompile Include="Debug\DebugGrid.cpp" />
+    <ClCompile Include="Overlay\OverlayRenderer.cpp" />
+    <ClCompile Include="Overlay\TextObject.cpp" />
+    <ClCompile Include="Overlay\TextFont.cpp" />
+    <ClCompile Include="Util\Screenshot.cpp" />
+    <ClCompile Include="Shader\ShaderManager.cpp" />
+    <ClCompile Include="Overlay\StatsOverlay.cpp" />
+    <ClCompile Include="Texture\TextureLoader.cpp" />
+    <ClCompile Include="Texture\Texture3D.cpp" />
+    <ClCompile Include="Texture\Texture2D.cpp" />
+    <ClCompile Include="Util\FileResource.cpp" />
+    <ClCompile Include="Input\Input.cpp" />
+    <ClCompile Include="Shader\ShaderProgram.cpp" />
+    <ClCompile Include="Timing\DeltaSampler.cpp" />
+    <ClCompile Include="Timing\Time.cpp" />
+    <ClCompile Include="Timing\Timing.cpp" />
+    <ClCompile Include="Util\Helper.cpp" />
+    <ClCompile Include="Util\Log.cpp" />
+    <ClCompile Include="Util\StringTokenizer.cpp" />
+    <ClCompile Include="Util\FileSystem.cpp" />
+    <ClCompile Include="Variable\Command\VariableListCommand.cpp" />
+    <ClCompile Include="Variable\Command\VariableSetCommand.cpp" />
+    <ClCompile Include="Variable\Command\VariableResetCommand.cpp" />
+    <ClCompile Include="Variable\VariableManager.cpp" />
+    <ClCompile Include="Util\VectorUtil.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Console\ConsoleCommandManager.h" />
+    <ClInclude Include="Console\ConsoleCommand.h" />
+    <ClInclude Include="Console\ConsoleLog.h" />
+    <ClInclude Include="Camera\Camera.h" />
+    <ClInclude Include="Console\ConsoleCommandRequest.h" />
+    <ClInclude Include="Debug\DebugAxis.h" />
+    <ClInclude Include="Debug\DebugQuad.h" />
+    <ClInclude Include="Debug\DebugCube.h" />
+    <ClInclude Include="Engine\EngineBasic.h" />
+    <ClInclude Include="Engine\EngineHints.h" />
+    <ClInclude Include="Engine\EngineInterface.h" />
+    <ClInclude Include="Camera\Frustum.h" />
+    <ClInclude Include="Animation\KeyframeAnimator.h" />
+    <ClInclude Include="Overlay\Overlay.h" />
+    <ClInclude Include="Overlay\OverlayManager.h" />
+    <ClInclude Include="Overlay\ConsoleOverlay.h" />
+    <ClInclude Include="Console\ConsoleHistory.h" />
+    <ClInclude Include="Console\Console.h" />
+    <ClInclude Include="Core.h" />
+    <ClInclude Include="Debug\DebugGrid.h" />
+    <ClInclude Include="GL.h" />
+    <ClInclude Include="Overlay\OverlayRenderer.h" />
+    <ClInclude Include="Overlay\TextObject.h" />
+    <ClInclude Include="Overlay\TextFont.h" />
+    <ClInclude Include="Util\Conversion.h" />
+    <ClInclude Include="Util\Screenshot.h" />
+    <ClInclude Include="Shader\ShaderManager.h" />
+    <ClInclude Include="Overlay\StatsOverlay.h" />
+    <ClInclude Include="Texture\TextureLoader.h" />
+    <ClInclude Include="Texture\Texture3D.h" />
+    <ClInclude Include="Texture\Texture2D.h" />
+    <ClInclude Include="Texture\TextureInterface.h" />
+    <ClInclude Include="Util\FileResource.h" />
+    <ClInclude Include="Input\Input.h" />
+    <ClInclude Include="Shader\ShaderProgram.h" />
+    <ClInclude Include="Timing\DeltaSampler.h" />
+    <ClInclude Include="Timing\Time.h" />
+    <ClInclude Include="Timing\Timing.h" />
+    <ClInclude Include="Util\Helper.h" />
+    <ClInclude Include="Util\Log.h" />
+    <ClInclude Include="Util\Singleton.h" />
+    <ClInclude Include="Util\StringTokenizer.h" />
+    <ClInclude Include="Util\FileSystem.h" />
+    <ClInclude Include="Variable\Command\VariableListCommand.h" />
+    <ClInclude Include="Variable\Command\VariableSetCommand.h" />
+    <ClInclude Include="Variable\VariableContainer.h" />
+    <ClInclude Include="Variable\VariableInterface.h" />
+    <ClInclude Include="Variable\Command\VariableResetCommand.h" />
+    <ClInclude Include="Variable\VariableListener.h" />
+    <ClInclude Include="Variable\VariableManager.h" />
+    <ClInclude Include="Util\VectorUtil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mathlib\mathlib.vcxproj">
+      <Project>{a3c10af4-f3af-4bd6-8460-92d127c1798a}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
